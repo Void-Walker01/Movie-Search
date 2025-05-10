@@ -291,6 +291,7 @@ function displayWatchLi(movies){
     col.appendChild(movieCard);
     row.appendChild(col);
   });
+  
     document.querySelectorAll('.detailsBtn').forEach(btn => {
       btn.addEventListener('click', async () => {
         const imdbID = btn.dataset.id;
