@@ -27,7 +27,7 @@ Btn.addEventListener('click', async function () {
     return;
   }
   try {
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&s=${inputval}`);
+    const res = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}&s=${inputval}`);
     if (res.data.Response === 'True') {
       lastSearchResults = res.data.Search;
       lastSearchTerm = inputval;
@@ -61,7 +61,7 @@ async function display(movies) {
     const movieCard = document.createElement('div');
     movieCard.className = 'card h-100 shadow-sm border-0 rounded-4';
     movieCard.innerHTML = `
-      <img src="${movie.Poster !== "N/A" ? movie.Poster : 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}" class="card-img-top rounded-top-4" alt="${movie.Title} poster">
+      <img src="${movie.Poster !== "N/A" ? movie.Poster : 'httpss://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}" class="card-img-top rounded-top-4" alt="${movie.Title} poster">
       <div class="card-body d-flex flex-column">
           <h5 class="card-title">${movie.Title} (${movie.Year})</h5>
           <div class="mt-auto d-grid gap-2">
@@ -80,7 +80,7 @@ async function display(movies) {
     btn.addEventListener('click', async () => {
       const imdbID = btn.dataset.id;
       try {
-        const res = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
+        const res = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
         displayfull(res.data);
       } catch (e) {
         console.error('Error fetching details:', e);
@@ -91,7 +91,7 @@ async function display(movies) {
   document.querySelectorAll('.watchlistBtn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const imdbID = btn.dataset.id;
-      const res = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
+      const res = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
       const movieData = res.data;
       addToWatchlist(movieData);
     });
@@ -104,7 +104,7 @@ async function displayfull(movie) {
   result.innerHTML = `
     <div class="row g-4 align-items-start">
         <div class="col-12 col-md-4">
-            <img src="${movie.Poster !== "N/A" ? movie.Poster : 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}" class="img-fluid rounded shadow w-100" alt="${movie.Title} poster">
+            <img src="${movie.Poster !== "N/A" ? movie.Poster : 'httpss://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}" class="img-fluid rounded shadow w-100" alt="${movie.Title} poster">
         </div>
         <div class="col-12 col-md-8">
             <h2>${movie.Title} (${movie.Year})</h2>
@@ -167,7 +167,7 @@ watchLiBtn.addEventListener('click', () => {
       movieCard.className = 'card h-100 shadow-sm border-0 rounded-4';
       movieCard.innerHTML = `
         <div class="d-flex flex-column flex-sm-row align-items-start h-100 p-2">
-          <img src="${movie.Poster !== "N/A" ? movie.Poster : 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}"
+          <img src="${movie.Poster !== "N/A" ? movie.Poster : 'httpss://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}"
                class="rounded shadow-sm mb-2 mb-sm-0 me-sm-3"
                alt="${movie.Title} poster"
                style="width: 90px; height: 135px; object-fit: cover;">
@@ -191,7 +191,7 @@ watchLiBtn.addEventListener('click', () => {
       btn.addEventListener('click', async () => {
         const imdbID = btn.dataset.id;
         try {
-          const res = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
+          const res = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
           displayfull(res.data);
         } catch (e) {
           console.error('Error fetching details:', e);
@@ -271,7 +271,7 @@ function displayWatchLi(movies){
     movieCard.className = 'card h-100 shadow-sm border-0 rounded-4';
     movieCard.innerHTML = `
       <div class="d-flex flex-column flex-sm-row align-items-start h-100 p-2">
-        <img src="${movie.Poster !== "N/A" ? movie.Poster : 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}"
+        <img src="${movie.Poster !== "N/A" ? movie.Poster : 'httpss://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'}"
              class="rounded shadow-sm mb-2 mb-sm-0 me-sm-3"
              alt="${movie.Title} poster"
              style="width: 90px; height: 135px; object-fit: cover;">
@@ -296,7 +296,7 @@ function displayWatchLi(movies){
       btn.addEventListener('click', async () => {
         const imdbID = btn.dataset.id;
         try {
-          const res = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
+          const res = await axios.get(`https://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`);
           displayfull(res.data);
         } catch (e) {
           console.error('Error fetching details:', e);
