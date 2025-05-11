@@ -36,6 +36,12 @@ The app uses the **OMDb API** to fetch movie details based on user searches. It 
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap
-- **API**: OMDb API for movie data
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap  
+- **API**: OMDb API for movie data  
 - **Storage**: localStorage for saving watchlist and theme preferences
+
+---
+
+## 🌐 Live Demo
+
+👉 [View the Live Site](https://void-walker01.github.io/Movie-Search/)
